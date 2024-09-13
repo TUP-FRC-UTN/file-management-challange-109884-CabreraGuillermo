@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit()">
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="form.nombre" name="nombre" required>
+  
+    <label>Fecha:</label>
+    <input type="date" [(ngModel)]="form.fecha" name="fecha" required>
+  
+    <label>Tipo de archivo:</label>
+    <select [(ngModel)]="form.tipoArchivo" name="tipoArchivo">
+      <option *ngFor="let tipo of tiposArchivos" [value]="tipo">{{ tipo }}</option>
+    </select>
+  
+    <label>Carpeta:</label>
+    <select [(ngModel)]="form.carpeta" name="carpeta">
+      <option *ngFor="let carpeta of carpetas" [value]="carpeta">{{ carpeta }}</option>
+    </select>
+  
+    <label>Dueños:</label>
+    <select [(ngModel)]="form.duenos" name="duenos" multiple>
+      <option *ngFor="let dueno of duenos" [value]="dueno">{{ dueno }}</option>
+    </select>
+    <button type="button" (click)="agregarDueno()">+</button>
+  
+    <button type="submit">Aceptar</button>
+    <button type="button" (click)="volver()">Volver</button>
+</form>
+  

@@ -1,0 +1,21 @@
+<button (click)="irANuevo()">Nuevo</button>
+
+<table>
+  <thead>
+    <tr>
+      <th><input type="checkbox"></th>
+      <th>Nombre</th>
+      <th>Fecha</th>
+      <th>Dueños</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td><input type="checkbox"></td>
+      <td>{{ item.nombre }}</td>
+      <td>{{ item.fecha | date }}</td>
+      <td>{{ item.duenos }}</td>
+    </tr>
+  </tbody>
+</table>
+
